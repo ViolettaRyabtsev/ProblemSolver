@@ -17,7 +17,7 @@ var quicksort = function (array) {
     // E. arary of numbers, array is not empty 
     var index = (array.length / 2).toFixed()
     var pivot = array[index]
-
+    console.log(pivot)
     // input array 
     var arrofSmaller = []
     var arrofBiger = []    // has a pivot 
@@ -32,10 +32,11 @@ var quicksort = function (array) {
 
         }
     }
+    console.log(arrofSmaller + ' and ' + arrofBiger)
     var arr = arrofSmaller.concat(pivot, arrofBiger)
     return arr;
 };
 
 //  var index = (array.length / 2).toFixed();
 
-console.log(quicksort([1, 2, 6, 8, 5, 4, 9]))
+console.log(quicksort([1, 2, 9, 2, 6, 8, 5]))

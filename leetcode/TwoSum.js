@@ -4,22 +4,22 @@
 
 // You can return the answer in any order.
 
-var twoSum = function(nums, target) {
-    //create a array of pair indexes
-    var arrayOfIndexPair=[];
-    // iterate through the nums 
-    for(var i=0; i<nums.length; i++){
+var twoSum = function (nums, target) {
+  //create a array of pair indexes
+  var arrayOfIndexPair = [];
+  // iterate through the nums
+  for (var i = 0; i < nums.length; i++) {
     // iterate through the nums again with start point is a next value in array
-        for(var j=i+1; j<nums.length; j++){
-    //if sum = target 
-            if(nums[i]+nums[j]===target){
-               arrayOfIndexPair.push(i,j) 
-            }
-    // push index of this pair in array 
-        }
+    for (var j = i + 1; j < nums.length; j++) {
+      //if sum = target
+      if (nums[i] + nums[j] === target) {
+        arrayOfIndexPair.push(i, j);
+      }
+      // push index of this pair in array
     }
-    //return the array
-    return arrayOfIndexPair
+  }
+  //return the array
+  return arrayOfIndexPair;
 };
 
 // Input: nums = [2,7,11,15], target = 9

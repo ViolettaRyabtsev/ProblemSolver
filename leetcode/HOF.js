@@ -25,7 +25,7 @@ const sam = createElf("sam", "fire");
 
 //Constructor functions
 
-// you can use protototype { call, apply, bind } with constructor functions
+// you can use prototype { call, apply, bind } with constructor functions
 
 class Elf {
   constructor(name, weapon) {

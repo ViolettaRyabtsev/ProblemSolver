@@ -36,6 +36,39 @@ class Graph {
       }
     }
   }
+
+  traverseDepth(start) {
+    let arr = [];
+    let visited = {};
+
+    const list = this.adjacencyList;
+
+    (function helper(vertex) {
+      if (!vertex) return null;
+
+      visited[vertex] = true;
+      arr.push(vertex);
+
+      console.log(visited);
+
+      //   list[vertex].forEach((element) => {
+      //     if (!visited[element]) {
+      //       return helper(element);
+      //     }
+      //   });
+
+      for (let i = 0; i < list[vertex].length; i++) {
+        if (!visited[list[vertex][i]]) {
+          return helper(list[vertex][i]);
+        }
+      }
+    })(start);
+
+    //mark visited vertex
+    return arr;
+  }
+
+  traverseIterative(vertex) {}
 }
 
 const graph = new Graph();
@@ -46,5 +79,4 @@ graph.addVertex("Moscow");
 graph.addVertex("Paris");
 graph.addEdges("Dallas", "Aspen");
 graph.addEdges("Moscow", "Paris");
-graph.removeVertex("Moscow");
-console.log(graph);
+console.log(graph.traverseDepth("Aspen"));
